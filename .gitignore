@@ -1,0 +1,16 @@
+# Python / environments
+__pycache__/
+*.py[oc]
+.venv/
+.cache/
+
+# Generated previews: recreate with `manimgx inspect`
+**/*.storyboard*.png
+
+# The downloadable collection archive lives outside the repo
+/*.zip
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
