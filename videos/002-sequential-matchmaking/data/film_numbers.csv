@@ -1,0 +1,39 @@
+scene,claim,value,detail,source
+daily_problem,Members per simulated world,200,Synthetic members; arrivals occur on days 0-20,PAPER.md section 2; docs/DATA_CONTRACT.md
+daily_problem,Decision horizon,60 days,The engine calls for asks and then pairs on each decision day,PAPER.md section 2.1; docs/POLICY_INTERFACE.md
+daily_problem,Daily clarification budget,12 units/day,A hard-constraint bundle costs 3 units; one soft field costs 1 unit,docs/DATA_CONTRACT.md; docs/POLICY_INTERFACE.md
+daily_problem,Primary outcome rarity,about 1 event/episode,Paper reports roughly 0.86 MSMI events per episode,PAPER.md Abstract and section 5.4(c)
+phase_one,Phase 1 configurations screened,17,Ten seeds and six scenario families; 60 episodes per arm; 1020 episodes in total,PAPER.md section 3.1
+phase_one,Phase 1 greedy score,0.350 MSMI/100,42 events in 60 episodes,PAPER.md section 3.2; results/scaled_factorial_10seeds.json
+phase_one,Phase 1 incumbent score,0.525 MSMI/100,63 events in 60 episodes; named lab_potential_maxw in Phase 1 and potential_ask after reconstruction,PAPER.md sections 3.2 and 4.1
+phase_one,Phase 1 paired difference,+0.175 MSMI/100,"potential - greedy; 95% seed-block CI [+0.092,+0.258]; p=0.016",PAPER.md section 3.2
+selection_traps,Pilot-seed reuse,"101, 102, 303",The three selection seeds were also inside the ten-seed measurement set,PAPER.md section 3.3(b)
+selection_traps,Phase 1 resolution at 60 episodes/arm,about 0.234 MSMI/100,Larger than the reported 0.175 gap,PAPER.md sections 3.4 and 4.2
+selection_traps,Reconstruction check,60/60 episodes,"Rebuilt configuration reproduced stored MSMI, assignment count and coverage; 0.5250 and 63 events",PAPER.md section 4.1 and Appendix A.4
+selection_traps,Signed prose variant,0.367 MSMI/100,44 events; 0.158 below the unsigned coding that reproduced the headline,"PAPER.md sections 3.3(c), 4.1 and Appendix A.4"
+fresh_test,Fresh seed blocks,1101-1220,120 seeds never used in Phase 1; six families; 720 episodes per arm,PAPER.md section 4.2
+fresh_test,Bootstrap resamples,50000,Seed-block bootstrap; inference resamples seeds rather than episodes,PAPER.md section 4.2; results/restat_out.json
+fresh_test,Phase 2 greedy score,0.4021 MSMI/100,"579 events; 95% CI [0.3569,0.4479] in the repository headline table",results/greedy_vs_potential_120seeds.json
+fresh_test,Phase 2 potential_ask score,0.3694 MSMI/100,"532 events; 95% CI [0.3236,0.4160] in the repository headline table",results/greedy_vs_potential_120seeds.json
+fresh_test,Phase 2 paired difference,-0.0326 MSMI/100,"potential_ask - greedy; 95% CI [-0.0903,+0.0250]; p=0.3564",results/analysis_120seeds_four_arm.json
+fresh_test,Phase 2 seed wins/ties/losses for potential_ask,44 / 18 / 58,One tile per seed in ID order; loss means greedy had the higher per-seed primary score,Derived from results/analysis_120seeds_four_arm.json; exported in data/per_seed_primary_120.csv
+fresh_test,Distance between Phase 1 and Phase 2 estimates,7.09 standard errors,The two confidence intervals do not overlap,PAPER.md section 5.1; results/greedy_vs_potential_120seeds.json round1_gap_check
+asking_matters,120-seed greedy interval,"0.402 [0.357,0.448]",579 events,PAPER.md section 5.2; results/primary_120seeds.csv
+asking_matters,120-seed potential_ask interval,"0.369 [0.324,0.416]",532 events,Paper Figure 2 source values; results/greedy_vs_potential_120seeds.json
+asking_matters,120-seed random_feasible interval,"0.332 [0.292,0.374]",478 events,PAPER.md section 5.2; results/primary_120seeds.csv
+asking_matters,120-seed no_ask interval,"0.098 [0.075,0.122]",141 events,PAPER.md section 5.2; results/primary_120seeds.csv
+asking_matters,Greedy minus no_ask,+0.304 MSMI/100,"95% CI [+0.261,+0.349]; p<0.001",PAPER.md section 5.2; results/contrasts_120seeds.csv
+asking_matters,Greedy minus random_feasible,+0.070 MSMI/100,"95% CI [+0.023,+0.116]; p=0.004",PAPER.md section 5.2; results/contrasts_120seeds.csv
+why_hard,Coverage relative to ceiling,97.8%,Coverage is supply-bound across asking policies and families,PAPER.md section 5.4(a)
+why_hard,Never introduced,about 133 of 200 members,Mean unserved is about 133 per 200 under asking policies,PAPER.md section 5.4(a); results/primary_120seeds.csv
+why_hard,Mean askable members,"45, 30, 15, 3, 0","At days 0, 5, 10, 15 and 20 respectively",PAPER.md section 5.4(a)
+why_hard,Observable acceptance-logit variance share,36.5%,Four observable soft-field agreements; decomposition over 30 worlds and 120000 pairs,PAPER.md section 5.4(b)
+why_hard,Hidden member-bias variance share,45.2%,Unobservable by construction,PAPER.md section 5.4(b)
+why_hard,Hidden pair-term variance share,18.3%,"Combined hidden share is 63.5%, reported as about 64%",PAPER.md section 5.4(b)
+why_hard,Oracle upper bound,about +5%,Ranking by true hidden success probability would add only about 5% to the score,PAPER.md section 5.4(b)
+why_hard,Events behind a 120-episode assessment,about 104,Derived from roughly 0.86 MSMI events per episode,PAPER.md section 5.4(c)
+unresolved_signal,Acceptance with zero known agreements and zero known disagreements,0.4918,Development family; n=4370,results/calibration_report.json unknown_vs_disagreement development|a0|d0
+unresolved_signal,Acceptance with zero known agreements and four known disagreements,0.2876,Development family; n=386; displayed drop is 20.4 percentage points,results/calibration_report.json unknown_vs_disagreement development|a0|d4
+unresolved_signal,Disagreement-aware contrast,+0.0132 MSMI/100,"Versus greedy; 95% CI [-0.0250,+0.0507]; p=0.5245; seed W/T/L 46/29/45",results/analysis_120seeds_four_arm.json; PAPER.md section 5.3
+unresolved_signal,MDE at 120 seed blocks,0.0546,"80% power; (1.95996+0.84162)*0.2136/sqrt(120), displayed as 0.055",code/analysis/make_figures.py Figure 3
+unresolved_signal,Seeds needed to resolve +0.0132,about 2055,80% power under the same paired-SD formula,PAPER.md section 5.3; code/analysis/make_figures.py Figure 3

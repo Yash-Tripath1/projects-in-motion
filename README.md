@@ -18,8 +18,37 @@ how it behaves.
 | No. | Film | Subject | Watch | Code & notes | Project |
 |---:|---|---|---|---|---|
 | 001 | **BendLab** | Phototropic stem bending and parameter identifiability | [Readable cut · 2:00](videos/001-bendlab/BendLab_slow_0.5x.mp4) · [Original · 1:00](videos/001-bendlab/BendLab.mp4) | [`scene.py`](videos/001-bendlab/scene.py) · [Film notes](videos/001-bendlab/README.md) | [BendLab repository](https://github.com/Yash-Tripath1/Bendlab) · [Live site](https://yash-tripath1.github.io/Bendlab/) |
+| 002 | **Sequential Matchmaking** | Sequential reciprocal matching, selection effects and replication | [Readable cut · 2:31](videos/002-sequential-matchmaking/SequentialMatchmaking_slow_0.5x.mp4) · [Original · 1:15](videos/002-sequential-matchmaking/SequentialMatchmaking.mp4) | [`scene.py`](videos/002-sequential-matchmaking/scene.py) · [Film notes](videos/002-sequential-matchmaking/README.md) | [Research repository](https://github.com/Yash-Tripath1/sequential-matching-public-simulator-lab) · [Paper](https://github.com/Yash-Tripath1/sequential-matching-public-simulator-lab/blob/main/PAPER.md) |
 
 New films will be added in numbered order as more projects are animated.
+
+## Latest film: Sequential Matchmaking
+
+**When a winning policy meets twelve times the data, does the win survive?**
+
+[![Sequential Matchmaking — the Phase 1 advantage and the 120-seed re-test](videos/002-sequential-matchmaking/poster.jpg)](videos/002-sequential-matchmaking/)
+
+Sequential Matchmaking follows a reported **+0.175** policy advantage from a
+ten-seed screen into a paired test on **120 fresh simulator seeds**. The film
+shows the daily clarify-then-match mechanism, the selection effects behind
+the first result, the exact code-recovery check, and the structural findings
+that do replicate when the policy ranking does not.
+
+Highlights include:
+
+- A daily allocation problem over **200 synthetic members**, a 12-unit
+  clarification budget and reciprocal hard-constraint gates.
+- A Phase 1 result of **0.525 versus 0.350**, followed by a 120-seed result
+  of **0.369 versus 0.402** for the same comparison.
+- One tile for each paired seed: the Phase 1 incumbent wins 44, ties 18 and
+  loses 58 against the supplied greedy baseline.
+- A replicated structural result: removing clarification costs **0.304
+  MSMI/100**, while coverage reaches **97.8%** of its structural ceiling.
+- A positive but unresolved **+0.013** candidate effect, reported with the
+  minimum detectable effect rather than adopted on noise.
+
+▶️ [Watch the 2:31 readable cut](videos/002-sequential-matchmaking/SequentialMatchmaking_slow_0.5x.mp4) ·
+[Read the film notes and sources](videos/002-sequential-matchmaking/README.md)
 
 ## Featured film: BendLab
 
@@ -52,13 +81,20 @@ projects-in-motion/
 ├── LICENSE
 ├── requirements.txt             # shared Python dependency
 └── videos/
-    └── 001-bendlab/
-        ├── BendLab_slow_0.5x.mp4   # recommended viewing cut
-        ├── BendLab.mp4             # original render
-        ├── scene.py                # complete generated-film source
-        ├── poster.jpg              # representative still
-        ├── README.md               # timeline, sources and credits
-        └── data/                   # data used or cited by the film
+    ├── 001-bendlab/
+    │   ├── BendLab_slow_0.5x.mp4   # recommended viewing cut
+    │   ├── BendLab.mp4             # original render
+    │   ├── scene.py                # complete generated-film source
+    │   ├── poster.jpg              # representative still
+    │   ├── README.md               # timeline, sources and credits
+    │   └── data/                   # data used or cited by the film
+    └── 002-sequential-matchmaking/
+        ├── SequentialMatchmaking_slow_0.5x.mp4
+        ├── SequentialMatchmaking.mp4
+        ├── scene.py
+        ├── poster.jpg
+        ├── README.md
+        └── data/
 ```
 
 Only material needed to watch, understand, inspect or reproduce an entry is
@@ -90,7 +126,7 @@ video. The files are structured in named sections so individual ideas can
 be read, modified and reused independently.
 
 The shared Python dependency is pinned in
-[`requirements.txt`](requirements.txt). The current entry uses Python 3.13
+[`requirements.txt`](requirements.txt). The current entries use Python 3.13
 or 3.14.
 
 ```bash
@@ -112,7 +148,8 @@ software systems and interactive tools.
 
 Individual project collaborators are credited within the relevant film
 folders. BendLab is led by Anadi Tripathi with Umaid as a
-collaborator.
+collaborator; Sequential Matchmaking's research and paper are by
+Anadi Tripathi.
 
 ## Licence and attribution
 

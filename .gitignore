@@ -4,7 +4,7 @@ __pycache__/
 .venv/
 .cache/
 
-# Generated previews: recreate with `manimgx inspect`
+# Generated storyboard previews
 **/*.storyboard*.png
 
 # The downloadable collection archive lives outside the repo
